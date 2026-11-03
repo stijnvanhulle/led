@@ -1,0 +1,17 @@
+[Unit]
+Description=LED panel HTTP API
+After=network-online.target bluetooth.target
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/led
+EnvironmentFile=-/home/pi/led/.env
+# drop a link a previous run left open, or the panel won't advertise
+ExecStartPre=-/bin/sh -c 'bluetoothctl disconnect "$$LED_ADDRESS"'
+ExecStart=/home/pi/led/.venv/bin/python /home/pi/led/server.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

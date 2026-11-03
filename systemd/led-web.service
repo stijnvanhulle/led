@@ -1,0 +1,19 @@
+[Unit]
+Description=LED panel control page (Nuxt)
+After=network-online.target ledserver.service
+Wants=network-online.target
+
+[Service]
+User=pi
+WorkingDirectory=/home/pi/led/web
+Environment=HOST=0.0.0.0 PORT=80 NUXT_LED_API=http://127.0.0.1:8080
+# settings from the settings page, outside the repo so a fresh clone keeps them
+Environment=LED_DATA_DIR=/home/pi/.local/share/pi-led
+# lets the service's user bind port 80
+AmbientCapabilities=CAP_NET_BIND_SERVICE
+ExecStart=/usr/bin/node .output/server/index.mjs
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+[Unit]
+Description=Pull the led repo and redeploy when main changed
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+User=pi
+WorkingDirectory=/home/pi/led
+ExecStart=/home/pi/led/update.sh

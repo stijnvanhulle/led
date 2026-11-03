@@ -1,0 +1,47 @@
+{
+  "name": "led-web",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Control page for the LED panel on the Raspberry Pi, built with Nuxt 4 and Nuxt UI.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/stijnvanhulle/led.git",
+    "directory": "web"
+  },
+  "license": "MIT",
+  "author": "Stijn Van Hulle <stijn@stijnvanhulle.be>",
+  "type": "module",
+  "scripts": {
+    "dev": "TMPDIR=/tmp nuxt dev",
+    "build": "nuxt build",
+    "preview": "nuxt preview",
+    "start": "PORT=${PORT:-80} node .output/server/index.mjs",
+    "postinstall": "nuxt prepare",
+    "typecheck": "nuxt typecheck",
+    "lint": "oxlint -c oxlint.config.ts ./src ./server ./*.ts",
+    "lint:fix": "oxlint -c oxlint.config.ts --fix ./src ./server ./*.ts",
+    "format": "oxfmt -c oxfmt.config.ts ./src ./server ./*.ts",
+    "upgrade": "pnpm exec taze -r -w --exclude pnpm --maturity-period 3"
+  },
+  "dependencies": {
+    "@nuxt/ui": "^4.12.0",
+    "nuxt": "^4.6.3",
+    "tailwindcss": "^4.3.3",
+    "unstorage": "^1.17.6",
+    "vue": "^3.5.42"
+  },
+  "devDependencies": {
+    "@iconify-json/iconoir": "^1.2.12",
+    "@types/node": "^22.20.1",
+    "oxfmt": "^0.67.0",
+    "oxlint": "^1.82.0",
+    "taze": "^21.1.0",
+    "typescript": "^6.0.3",
+    "vue-tsc": "^3.3.11"
+  },
+  "packageManager": "pnpm@12.4.0",
+  "engines": {
+    "node": ">=22",
+    "pnpm": ">=12.0.0"
+  }
+}
