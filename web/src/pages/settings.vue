@@ -37,7 +37,7 @@ const npmPackages = ref<Array<string>>([])
 const newPackage = ref('')
 const saved = reactive<Record<Section, boolean>>({ github: false, npm: false, weather: false, calendar: false, busy: false, night: false, presets: false })
 const calendarType = ref<'work' | 'personal'>('work')
-const busy = reactive({ auto: true, soon: 15 })
+const busy = reactive({ auto: false, soon: 15 })
 
 // FetchError carries the API's {"error": "..."} body in .data
 const errorText = (e: unknown) => (e as { data?: { error?: string } })?.data?.error ?? (e as Error)?.message

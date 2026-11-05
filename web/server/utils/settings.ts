@@ -23,7 +23,7 @@ export interface BusySettings {
   soon: number
   force: boolean
 }
-export const DEFAULT_BUSY: BusySettings = { auto: true, soon: 15, force: false }
+export const DEFAULT_BUSY: BusySettings = { auto: false, soon: 15, force: false }
 export interface NightSettings {
   enabled: boolean
   off: string
