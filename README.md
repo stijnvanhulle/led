@@ -14,7 +14,7 @@ The control page has seven tabs:
 - A clock
 - The weather for a place you search, from [Open-Meteo](https://open-meteo.com), redrawn every 10 minutes
 - The next event from a private iCal link ("in 12m", "1h16m", a time later today, "tmrw" or "free"), then its title on a second page
-- A busy light: the panel glows green when you're free, orange shortly before a work meeting and red during one. It can switch to this on its own and go back to the previous screen when the meeting ends.
+- A busy light: the panel glows green when you're free, orange shortly before a work meeting and red during one. When you turn that on in `/settings`, it switches to this on its own and goes back to the previous screen when the meeting ends. Otherwise it only shows when you pick it, so your text stays.
 
 The Pi draws every screen except text itself, and the preview shows the same pixels. `/settings` holds the GitHub repository, the npm packages, the weather location, the calendars (each work or personal, and work ones drive the busy light), the busy light, night mode (screen off and on at set times) and the text presets.
 

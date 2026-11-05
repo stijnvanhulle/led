@@ -296,8 +296,8 @@ config = {
     "weather": {"name": None, "lat": None, "lon": None, "color": "ffffff"},
     "calendar": {"url": None, "color": "f0b049"},
     "night": {"enabled": False, "off": "23:00", "on": "07:00"},
-    # the busy light: work calendars' links, switch to it by itself, minutes that count as soon
-    "busy": {"urls": [], "auto": True, "soon": 15, "force": False},
+    # the busy light: work calendars' links, switch to it by itself (off until turned on in settings), minutes that count as soon
+    "busy": {"urls": [], "auto": False, "soon": 15, "force": False},
     # period is one of features.NPM_PERIODS
     "npm": {"package": None, "period": "last-week", "color": "cb3837"},
 }
@@ -539,7 +539,8 @@ def busy_tick():
         return
     state, _ = busy_now()
     if mode == "busy":
-        if busy["auto_from"] and state == "free" and not b["force"]:
+        # it took over by itself: go back once free, or as soon as switching by itself is turned off
+        if busy["auto_from"] and (state == "free" or not b["auto"]) and not b["force"]:
             back, busy["auto_from"] = busy["auto_from"], None
             redraw(back, switching=True)
             mode = back
