@@ -1,4 +1,5 @@
 import fsDriver from 'unstorage/drivers/fs'
+import { defineNitroPlugin, useStorage } from 'nitropack/runtime'
 
 // Settings from the settings page, as files. On the Pi they live outside the repo
 // (LED_DATA_DIR, set by led-web.service), so a fresh clone or reinstall keeps them.

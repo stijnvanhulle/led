@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { computed, nextTick, onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
+import { useToast } from '#imports'
+import { NuxtLink, UButton, UColorModeButton, UFormField, UIcon, UInput, USelect, USlider, USwitch } from '#components'
+import ColorPicker from '~/components/ColorPicker.vue'
+import LedPanel from '~/components/LedPanel.vue'
 import { forgetScreens, forgetStars, measure, type BusyState, MIN_BRIGHTNESS, modeOf, W, type Feature, type PanelState } from '~/utils/led'
 
 interface Health {

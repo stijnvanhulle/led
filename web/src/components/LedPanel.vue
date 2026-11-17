@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted, ref, watch } from 'vue'
 import { frame, H, MIN_BRIGHTNESS, SNAKE_FRAMES, SNAKE_MS, snakeFrame, W, type PanelState } from '~/utils/led'
 
 // loading: the snake the panel shows at power-on, while the page connects

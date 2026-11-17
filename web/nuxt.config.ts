@@ -5,6 +5,9 @@ export default defineNuxtConfig({
   modules: ['@nuxt/ui'],
   css: ['~/assets/css/main.css'],
   devtools: { enabled: false },
+  // explicit imports everywhere: no auto-imports in the app or in server/ (Nitro follows imports.autoImport)
+  imports: { autoImport: false },
+  components: { dirs: [] },
   runtimeConfig: {
     // the Python service that owns the Bluetooth connection, overridden by NUXT_LED_API
     ledApi: 'http://127.0.0.1:8080',

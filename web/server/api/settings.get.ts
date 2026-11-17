@@ -1,3 +1,18 @@
+import { defineEventHandler } from 'h3'
+import { getSavedStars } from '#server/utils/repo'
+import {
+  calendarHost,
+  calendarType,
+  getActiveCalendar,
+  getBusy,
+  getCalendars,
+  getNight,
+  getNpm,
+  getPresets,
+  getScreen,
+  getWeather,
+} from '#server/utils/settings'
+
 // Everything the settings and control pages show. Calendar links are private, so only their hosts are returned.
 export default defineEventHandler(async () => {
   const [stars, weather, calendars, active, night, presets, screen, busy, npm] = await Promise.all([

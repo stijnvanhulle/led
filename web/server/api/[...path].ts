@@ -1,3 +1,6 @@
+import { defineEventHandler, getRequestURL, getRouterParam, proxyRequest } from 'h3'
+import { useRuntimeConfig } from 'nitropack/runtime'
+
 // /api/<path> → the Python service, which talks to the panel over Bluetooth
 export default defineEventHandler((event) => {
   const path = getRouterParam(event, 'path') ?? ''

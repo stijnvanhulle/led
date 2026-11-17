@@ -1,3 +1,7 @@
+import { createError, defineEventHandler, readBody, setResponseHeader, setResponseStatus } from 'h3'
+import { useRuntimeConfig } from 'nitropack/runtime'
+import { pushStars, REPO_PATTERN, saveStars } from '#server/utils/repo'
+
 // A stateless MCP server (Streamable HTTP, JSON responses) so Claude can put text on
 // the panel, e.g. when a task is done:  claude mcp add --transport http led http://<pi>/mcp
 // shortcut: no auth, like the rest of the API, so keep it on the LAN and tailnet, and add a
