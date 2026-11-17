@@ -1,3 +1,5 @@
+import { useRuntimeConfig, useStorage } from 'nitropack/runtime'
+
 // Settings from the settings page, brightness and power, and the last screen, saved on
 // the Pi. The ones the panel uses are also handed to the Python service, which keeps
 // them only in memory.

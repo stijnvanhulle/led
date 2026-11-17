@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { onBeforeUnmount, onMounted, reactive, ref, watch } from 'vue'
+import { useToast } from '#imports'
+import { UButton, UColorModeButton, UFormField, UIcon, UInput, USelect, USwitch } from '#components'
+
 interface Settings {
   repo: string | null
   weather: { name: string | null; lat: number | null; lon: number | null }

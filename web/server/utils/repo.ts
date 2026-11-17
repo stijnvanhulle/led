@@ -1,3 +1,5 @@
+import { useRuntimeConfig, useStorage } from 'nitropack/runtime'
+
 export const REPO_PATTERN = /^[\w.-]+\/[\w.-]+$/
 export const COLOR_PATTERN = /^#?[0-9a-fA-F]{6}$/
 

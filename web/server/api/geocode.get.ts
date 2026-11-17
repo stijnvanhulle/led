@@ -1,3 +1,5 @@
+import { defineEventHandler, getQuery } from 'h3'
+
 // Place search for the weather location (Open-Meteo, free, no key).
 interface Place {
   name: string

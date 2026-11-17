@@ -1,3 +1,18 @@
+import { defineNitroPlugin, useRuntimeConfig } from 'nitropack/runtime'
+import { getSavedStars, pushStars } from '#server/utils/repo'
+import {
+  busyConfig,
+  getActiveCalendar,
+  getNight,
+  getNpm,
+  getSavedPanel,
+  getScreen,
+  getWeather,
+  pushConfig,
+  pushPanel,
+  restoreScreen,
+} from '#server/utils/settings'
+
 // On start, give the Python service what was saved: the stars repo and color,
 // brightness and power, weather, the chosen calendar, npm and night mode, then put the last
 // screen back. Retry until it works: the Python service restarts with this server on every

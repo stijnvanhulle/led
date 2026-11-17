@@ -1,3 +1,6 @@
+import { createError, defineEventHandler, readBody } from 'h3'
+import { COLOR_PATTERN, pushStars, REPO_PATTERN, saveStars } from '#server/utils/repo'
+
 // Saves the GitHub repo and digit color for the stars feature and hands them to the Python service.
 export default defineEventHandler(async (event) => {
   const { repo, color } = await readBody<{ repo?: unknown; color?: unknown }>(event)
